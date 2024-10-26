@@ -1,11 +1,14 @@
 import { ITheme } from "../interfaces/ITheme";
-import mongoose, { Schema, Document, model } from "mongoose";
+import mongoose, { Document, Schema, model } from "mongoose";
 
-const ThemeSchema = new Schema<ITheme>({
+interface IThemeModel extends ITheme, Document {}
+
+const ThemeSchema: Schema = new Schema({
     name: { type: String, required: true },
     active: { type: Boolean, default: true },
+    dateCreation: { type: Date, required: true },
 });
 
-const Theme = model<ITheme & Document>("Theme", ThemeSchema);
+const Theme = model<IThemeModel>("Theme", ThemeSchema);
 
-export d
+export default Theme;

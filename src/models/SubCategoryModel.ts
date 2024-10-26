@@ -1,14 +1,16 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, { Schema, Document, model } from "mongoose";
 import { Isubcategory } from "../interfaces/ISubcategory";
 import theme from "./themeModel";
 
-const SubcategorySchema = new Schema<Isubcategory>({
+interface ISubcategoryModel extends Isubcategory, Document {}
+
+const SubcategorySchema: Schema = new Schema({
     name: { type: String, required: true },
     active: { type: Boolean, required: true },
-    theme: [{ type: theme.schema }],
+    dateCreation: { type: Date, required: true },
+    theme: [{ type: mongoose.Schema.Types.ObjectId, ref: "Theme" }],
 });
 
-export default mongoose.model<Isubcategory & Document>(
-    "Subcategory",
-    SubcategorySchema
-);
+const Subcategory = model<ISubcategoryModel>("Subcategory", SubcategorySchema);
+
+export default Subcategory;

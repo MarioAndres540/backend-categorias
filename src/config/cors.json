@@ -1,0 +1,17 @@
+{
+    "origin": true,
+    "methods": ["POST", "GET", "PATCH", "PUT", "DELETE", "OPTIONS"],
+    "allowedHeaders": [
+        "authorization",
+        "xAuth",
+        "Content-Type",
+        "x-Requested-With"
+    ],
+    "exposedHeaders": [
+        "authorization",
+        "xAuth",
+        "Content-Type",
+        "x-Requested-With"
+    ],
+    "credentials": true
+}

@@ -1,8 +1,8 @@
-import { Isubcategory } from "./ISubcategory";
+import mongoose from "mongoose";
 
 export interface ICategory extends Document {
-    nome: string;
+    name: string;
     active: boolean;
     dateCreation: Date;
-    subcategory: Isubcategory[];
+    subcategory: mongoose.Types.ObjectId[];
 }

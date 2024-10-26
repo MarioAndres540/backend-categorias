@@ -1,8 +1,8 @@
-import { ITheme } from "./ITheme";
+import mongoose from "mongoose";
 
 export interface Isubcategory {
     name: string;
     active: boolean;
     dateCreation: Date;
-    theme: ITheme[];
+    theme: mongoose.Types.ObjectId[];
 }
