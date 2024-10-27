@@ -26,7 +26,7 @@ export default class SubCategoryRespository {
         name: string,
         active: boolean,
         dateCreation: Date,
-        theme: string
+        theme?: string
     ) {
         try {
             const newTheme = new Subcategory({
@@ -44,9 +44,9 @@ export default class SubCategoryRespository {
 
     static async editSubcategory(
         id: string,
-        name: string,
-        active: boolean,
-        theme: string
+        name?: string,
+        active?: boolean,
+        theme?: string
     ) {
         try {
             return await Subcategory.findByIdAndUpdate(
