@@ -5,15 +5,15 @@ echo "# backend-categorias
 Descripción breve del proyecto.
 
 ## Instalación
-
-\`\`\`bash
+instalacion de paquetes, importante tenerla ultima version de NODE
+\`\`\`
 npm install
 \`\`\`
 
 ## Uso
-
-\`\`\`bash
-npm rund devs
+Ejecucion del proyecto
+\`\`\`
+npm rund dev
 \`\`\`
 
 ## Scripts
